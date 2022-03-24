@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:time_co_shoots_price/dependency_injection.dart';
+import 'package:time_co_shoots_price/shared/styles.dart';
 import 'package:time_co_shoots_price/view/home.dart';
 import 'package:time_co_shoots_price/view/splashscreen.dart';
 
 void main() {
+  declareServices();
+
   runApp(App());
 }
 
@@ -25,7 +29,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) => MaterialApp.router(
         title: title,
         theme: ThemeData(
-          primarySwatch: Colors.grey,
+          primarySwatch: Styles.secondaryColor,
         ),
         routeInformationParser: _goRouter.routeInformationParser,
         routerDelegate: _goRouter.routerDelegate,
