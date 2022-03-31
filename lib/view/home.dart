@@ -10,6 +10,7 @@ class Home extends StatelessWidget {
   static const routeName = '/home';
 
   final _bottomOptions = const [
+    TabItem(icon: Icons.map, title: 'Discovery'),
     TabItem(icon: Icons.home, title: 'Home'),
     TabItem(icon: Icons.map, title: 'Discovery'),
   ];
@@ -17,6 +18,7 @@ class Home extends StatelessWidget {
   final _widgetOptions = const [
     Text('page1'),
     Text('page2'),
+    Text('page3'),
   ];
 
   const Home({Key? key}) : super(key: key);
@@ -26,8 +28,14 @@ class Home extends StatelessWidget {
       value: GetIt.I.get<BottomBarProvider>(),
       child: Consumer<BottomBarProvider>(
         builder: (context, provider, _) => Scaffold(
-          appBar: AppBar(title: const Text(App.title)),
+          appBar: AppBar(
+              backgroundColor: Colors.black,
+              title: const Text(
+                App.title,
+                style: TextStyle(color: Colors.white),
+              )),
           bottomNavigationBar: ConvexAppBar(
+            initialActiveIndex: 1,
             style: TabStyle.reactCircle,
             activeColor: Colors.black,
             backgroundColor: Styles.secondaryColor,
