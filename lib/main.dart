@@ -6,7 +6,7 @@ import 'package:time_co_shoots_price/view/home.dart';
 import 'package:time_co_shoots_price/view/splashscreen.dart';
 
 void main() {
-  declareServices();
+  declareDependencyInjection();
 
   runApp(App());
 }
@@ -14,7 +14,7 @@ void main() {
 class App extends StatelessWidget {
   App({Key? key}) : super(key: key);
 
-  static const String title = 'Time Co Shoots Price';
+  static const String title = 'TimeCo Shoots Price';
 
   final GoRouter _goRouter = GoRouter(initialLocation: '/', routes: [
     GoRoute(path: '/', redirect: (_) => Splashscreen.routeName),

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:time_co_shoots_price/shared/styles.dart';
-
-import 'home.dart';
+import 'package:time_co_shoots_price/view/home.dart';
 
 class Splashscreen extends StatefulWidget {
   static const routeName = '/splashscreen';
@@ -15,7 +14,7 @@ class Splashscreen extends StatefulWidget {
 
 class _SplashscreenState extends State<Splashscreen> {
   _SplashscreenState() {
-    Future.delayed(const Duration(seconds: 5), () {
+    Future.delayed(const Duration(seconds: 3), () {
       context.go(Home.routeName);
     });
   }
@@ -36,17 +35,17 @@ class _SplashscreenState extends State<Splashscreen> {
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const <Widget>[
+            children: [
               CircleAvatar(
-                backgroundColor: Colors.black,
-                radius: 75.0,
-                child: Icon(
-                  Icons.verified_user,
-                  size: 50.0,
+                backgroundColor: Styles.secondaryColor.shade500,
+                radius: 110,
+                child: const CircleAvatar(
+                  radius: 100,
+                  backgroundImage: AssetImage("assets/images/icon_app.png"),
                 ),
-              ),
+              )
             ],
-          ),
+          )
         ],
       ),
     );
