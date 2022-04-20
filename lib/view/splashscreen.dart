@@ -15,7 +15,7 @@ class Splashscreen extends StatefulWidget {
 class _SplashscreenState extends State<Splashscreen> {
   _SplashscreenState() {
     Future.delayed(const Duration(seconds: 3), () {
-      context.go(Home.routeName);
+      context.push(Home.routeName);
     });
   }
 
@@ -29,7 +29,7 @@ class _SplashscreenState extends State<Splashscreen> {
             decoration: const BoxDecoration(
               gradient: RadialGradient(
                 radius: 1,
-                colors: [Styles.secondaryColor, Colors.black],
+                colors: [Styles.primaryColor, Colors.black],
               ),
             ),
           ),
@@ -37,7 +37,7 @@ class _SplashscreenState extends State<Splashscreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CircleAvatar(
-                backgroundColor: Styles.secondaryColor.shade500,
+                backgroundColor: Styles.primaryColor.shade500,
                 radius: 110,
                 child: const CircleAvatar(
                   radius: 100,

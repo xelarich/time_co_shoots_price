@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Styles {
-  static const MaterialColor secondaryColor = MaterialColor(
+  static const MaterialColor primaryColor = MaterialColor(
     0xFFC19D5D,
     <int, Color>{
       0: Color(0xFFFFFFFF),

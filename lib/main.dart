@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:time_co_shoots_price/dependency_injection.dart';
 import 'package:time_co_shoots_price/shared/styles.dart';
 import 'package:time_co_shoots_price/view/home.dart';
+import 'package:time_co_shoots_price/view/information/infomation_page.dart';
 import 'package:time_co_shoots_price/view/splashscreen.dart';
 
 void main() {
@@ -21,7 +22,8 @@ class App extends StatelessWidget {
     GoRoute(
         path: Splashscreen.routeName,
         builder: (context, state) => const Splashscreen()),
-    GoRoute(path: Home.routeName, builder: (context, state) => const Home())
+    GoRoute(path: Home.routeName, builder: (context, state) => const Home()),
+    GoRoute(path: InformationPage.routeName, builder: (context, state) => const InformationPage())
   ]);
 
   // This widget is the root of your application.
@@ -29,7 +31,8 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) => MaterialApp.router(
         title: title,
         theme: ThemeData(
-          primarySwatch: Styles.secondaryColor,
+          primaryColor: Styles.primaryColor,
+          primarySwatch: Styles.primaryColor,
         ),
         routeInformationParser: _goRouter.routeInformationParser,
         routerDelegate: _goRouter.routerDelegate,

@@ -14,7 +14,7 @@ WeddingFormula _$WeddingFormulaFromJson(Map<String, dynamic> json) =>
       events: (json['events'] as List<dynamic>?)
           ?.map((e) => WeddingEvent.fromJson(e as Map<String, dynamic>))
           .toList(),
-      price: json['price'] as int?,
+      price: json['wedding'] as int?,
     );
 
 Map<String, dynamic> _$WeddingFormulaToJson(WeddingFormula instance) =>
@@ -23,7 +23,7 @@ Map<String, dynamic> _$WeddingFormulaToJson(WeddingFormula instance) =>
       'name': instance.name,
       'description': instance.commentary,
       'events': instance.events,
-      'price': instance.price,
+      'wedding': instance.price,
     };
 
 WeddingEvent _$WeddingEventFromJson(Map<String, dynamic> json) => WeddingEvent(

@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:time_co_shoots_price/main.dart';
 import 'package:time_co_shoots_price/provider/bottom_bar_provider.dart';
 import 'package:time_co_shoots_price/shared/styles.dart';
-import 'package:time_co_shoots_price/view/price/price_page.dart';
+import 'package:time_co_shoots_price/view/wedding/wedding_page.dart';
 
 class Home extends StatelessWidget {
   static const routeName = '/home';
@@ -18,7 +18,7 @@ class Home extends StatelessWidget {
 
   final _widgetOptions = const [
     Text('page1'),
-    PricePage(),
+    WeddingPage(),
     Text('page3'),
   ];
 
@@ -39,7 +39,7 @@ class Home extends StatelessWidget {
             initialActiveIndex: 1,
             style: TabStyle.reactCircle,
             activeColor: Colors.black,
-            backgroundColor: Styles.secondaryColor,
+            backgroundColor: Styles.primaryColor,
             items: _bottomOptions,
             onTap: (index) => provider.onItemTapped(index),
           ),
