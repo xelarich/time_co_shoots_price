@@ -1,6 +1,3 @@
-class InformationService{
+class InformationService {
   bool genderSelected = false;
-
-
-
 }

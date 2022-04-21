@@ -23,7 +23,9 @@ class App extends StatelessWidget {
         path: Splashscreen.routeName,
         builder: (context, state) => const Splashscreen()),
     GoRoute(path: Home.routeName, builder: (context, state) => const Home()),
-    GoRoute(path: InformationPage.routeName, builder: (context, state) => const InformationPage())
+    GoRoute(
+        path: InformationPage.routeName,
+        builder: (context, state) => const InformationPage())
   ]);
 
   // This widget is the root of your application.

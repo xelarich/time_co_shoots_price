@@ -59,7 +59,7 @@ class _WeddingPageState extends State<WeddingPage> {
                   ),
                   Expanded(
                     child: ListView.builder(
-                      physics: AlwaysScrollableScrollPhysics(),
+                      physics: const AlwaysScrollableScrollPhysics(),
                       itemCount: _priceService.getListWeedingType().length,
                       itemBuilder: (context, index) {
                         return Padding(

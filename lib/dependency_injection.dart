@@ -17,6 +17,7 @@ ServiceDeclaration declareDependencyInjection = () {
 void declareProvider() {
   GetIt.I.registerSingleton(BottomBarProvider());
 }
+
 void declareService() {
   GetIt.I.registerSingleton(PriceService());
   GetIt.I.registerSingleton(InformationService());

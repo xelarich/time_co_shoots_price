@@ -66,7 +66,8 @@ class _InformationPageState extends State<InformationPage> {
                       const Visibility(child: Text("Sélectionner la civilité")),
                       CustomFormField(
                         labelText: "Nom",
-                        validator: (val) => val!.isEmpty ? "Entrer un nom" : null,
+                        validator: (val) =>
+                            val!.isEmpty ? "Entrer un nom" : null,
                       ),
                       CustomFormField(
                         labelText: "Prénom",

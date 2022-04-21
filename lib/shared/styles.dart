@@ -17,5 +17,4 @@ class Styles {
       900: Color(0xFF261F12),
     },
   );
-
 }
