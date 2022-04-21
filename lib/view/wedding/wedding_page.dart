@@ -32,12 +32,14 @@ class _WeddingPageState extends State<WeddingPage> {
                     padding: const EdgeInsets.all(8),
                     child: ElevatedButton(
                       style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.resolveWith<Color>(
-                              (Set<MaterialState> states) {
+                        backgroundColor:
+                            MaterialStateProperty.resolveWith<Color>(
+                          (Set<MaterialState> states) {
                             if (states.contains(MaterialState.disabled)) {
                               return Colors.grey;
                             }
-                            return Theme.of(context).primaryColor; // Use the component's default.
+                            return Theme.of(context)
+                                .primaryColor; // Use the component's default.
                           },
                         ),
                       ),
@@ -56,28 +58,24 @@ class _WeddingPageState extends State<WeddingPage> {
                     ),
                   ),
                   Expanded(
-                    child: SingleChildScrollView(
-                      physics: const AlwaysScrollableScrollPhysics(),
-                      child: ListView.builder(
-                        shrinkWrap: true,
-                        itemCount: _priceService.getListWeedingType().length,
-                        itemBuilder: (context, index) {
-                          return Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: WeddingFormulaTile(
-                                _priceService.getListWeedingType()[index],
-                                selected:
-                                    weddingProvider.selectedIndex == index,
-                                onTap: () {
-                                  weddingProvider.selectWeddingFormula(
-                                      _priceService.getListWeedingType()[index],
-                                      index);
-                                },
-                              ));
-                        },
-                      ),
+                    child: ListView.builder(
+                      physics: AlwaysScrollableScrollPhysics(),
+                      itemCount: _priceService.getListWeedingType().length,
+                      itemBuilder: (context, index) {
+                        return Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: WeddingFormulaTile(
+                              _priceService.getListWeedingType()[index],
+                              selected: weddingProvider.selectedIndex == index,
+                              onTap: () {
+                                weddingProvider.selectWeddingFormula(
+                                    _priceService.getListWeedingType()[index],
+                                    index);
+                              },
+                            ));
+                      },
                     ),
-                  )
+                  ),
                 ],
               );
             },
