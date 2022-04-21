@@ -8,21 +8,13 @@ import 'package:time_co_shoots_price/shared/styles.dart';
 import 'package:time_co_shoots_price/view/information/widget/custom_formfield.dart';
 import 'package:time_co_shoots_price/view/information/widget/gender_information.dart';
 
-class InformationPage extends StatefulWidget {
+class InformationPage extends StatelessWidget {
   static const routeName = '/information';
-
-  const InformationPage({Key? key}) : super(key: key);
-
-  @override
-  State<InformationPage> createState() => _InformationPageState();
-}
-
-class _InformationPageState extends State<InformationPage> {
   final formKey = GlobalKey<FormState>();
   final InformationService _informationService =
       GetIt.I.get<InformationService>();
 
-  String? nom;
+  InformationPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -1,3 +1,4 @@
+import 'package:time_co_shoots_price/data/local_model/photo_printing_format.dart';
 import 'package:time_co_shoots_price/data/local_model/wedding_formula.dart';
 
 class PriceService {
@@ -101,6 +102,17 @@ class PriceService {
                 description: "Photo de groupe/couple",
                 pathIcon: "assets/images/camera.png"),
           ]),
+    ];
+  }
+
+  List<PhotoPrintingFormat> getListPhotoPrinting(){
+    return [
+      PhotoPrintingFormat(1,format: "10x15",price: 0.22),
+      PhotoPrintingFormat(1,format: "20x30",price: 1.11),
+      PhotoPrintingFormat(1,format: "21x30",price: 1.11),
+      PhotoPrintingFormat(1,format: "24x30",price: 1.11),
+      PhotoPrintingFormat(1,format: "30x40",price: 3.31),
+      PhotoPrintingFormat(1,format: "30x45",price: 3.31),
     ];
   }
 }

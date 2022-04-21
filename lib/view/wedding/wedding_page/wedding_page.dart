@@ -4,8 +4,8 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:time_co_shoots_price/provider/weeding_provider.dart';
 import 'package:time_co_shoots_price/service/price_service.dart';
-import 'package:time_co_shoots_price/view/information/infomation_page.dart';
-import 'package:time_co_shoots_price/view/wedding/widget/wedding_formula_tile.dart';
+import 'package:time_co_shoots_price/view/wedding/wedding_option/wedding_option.dart';
+import 'package:time_co_shoots_price/view/wedding/wedding_page/widget/wedding_formula_tile.dart';
 
 class WeddingPage extends StatefulWidget {
   const WeddingPage({Key? key}) : super(key: key);
@@ -53,7 +53,7 @@ class _WeddingPageState extends State<WeddingPage> {
                       onPressed: weddingProvider.selectedIndex.isNegative
                           ? null
                           : () {
-                              context.push(InformationPage.routeName);
+                              context.push(WeddingOption.routeName);
                             },
                     ),
                   ),
