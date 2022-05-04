@@ -18,6 +18,7 @@ class _GenderInformationState extends State<GenderInformation> {
   Widget build(BuildContext context) {
     return Row(
       children: [
+        const Text("Sélectionner la civilité"),
         for (final gender in Gender.values) ...{
           Row(
             children: [

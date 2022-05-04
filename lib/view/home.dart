@@ -5,8 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:time_co_shoots_price/main.dart';
 import 'package:time_co_shoots_price/provider/bottom_bar_provider.dart';
 import 'package:time_co_shoots_price/shared/styles.dart';
-import 'package:time_co_shoots_price/view/wedding/wedding_option/wedding_option.dart';
-import 'package:time_co_shoots_price/view/wedding/wedding_page/wedding_page.dart';
+import 'package:time_co_shoots_price/view/wedding/wedding_page.dart';
 
 class Home extends StatelessWidget {
   static const routeName = '/home';

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
-import 'package:time_co_shoots_price/main.dart';
 import 'package:time_co_shoots_price/service/infomartion_service.dart';
 import 'package:time_co_shoots_price/shared/extension.dart';
 import 'package:time_co_shoots_price/shared/styles.dart';
@@ -22,7 +21,7 @@ class InformationPage extends StatelessWidget {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: const Text(App.title, style: TextStyle(color: Colors.white)),
+        title: const Text("Information client", style: TextStyle(color: Colors.white)),
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,
@@ -47,15 +46,8 @@ class InformationPage extends StatelessWidget {
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
-                      Text(
-                        "Information client",
-                        style: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18),
-                      ),
+
                       const GenderInformation(),
-                      const Visibility(child: Text("Sélectionner la civilité")),
                       CustomFormField(
                         labelText: "Nom",
                         validator: (val) =>

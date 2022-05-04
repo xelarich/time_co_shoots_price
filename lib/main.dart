@@ -4,8 +4,8 @@ import 'package:time_co_shoots_price/dependency_injection.dart';
 import 'package:time_co_shoots_price/shared/styles.dart';
 import 'package:time_co_shoots_price/view/home.dart';
 import 'package:time_co_shoots_price/view/information/infomation_page.dart';
+import 'package:time_co_shoots_price/view/option/option_page.dart';
 import 'package:time_co_shoots_price/view/splashscreen.dart';
-import 'package:time_co_shoots_price/view/wedding/wedding_option/wedding_option.dart';
 
 void main() {
   declareDependencyInjection();
@@ -28,8 +28,8 @@ class App extends StatelessWidget {
         path: InformationPage.routeName,
         builder: (context, state) => InformationPage()),
     GoRoute(
-        path: WeddingOption.routeName,
-        builder: (context, state) => const WeddingOption())
+        path: OptionPage.routeName,
+        builder: (context, state) => const OptionPage())
   ]);
 
   // This widget is the root of your application.

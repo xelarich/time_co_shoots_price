@@ -1,4 +1,4 @@
-import 'package:time_co_shoots_price/data/local_model/photo_printing_format.dart';
+import 'package:time_co_shoots_price/data/local_model/photo_printing.dart';
 import 'package:time_co_shoots_price/data/local_model/wedding_formula.dart';
 
 class PriceService {
@@ -105,14 +105,50 @@ class PriceService {
     ];
   }
 
-  List<PhotoPrintingFormat> getListPhotoPrinting(){
+  List<PhotoSize> getListPhotoSize() {
     return [
-      PhotoPrintingFormat(1,format: "10x15",price: 0.22),
-      PhotoPrintingFormat(1,format: "20x30",price: 1.11),
-      PhotoPrintingFormat(1,format: "21x30",price: 1.11),
-      PhotoPrintingFormat(1,format: "24x30",price: 1.11),
-      PhotoPrintingFormat(1,format: "30x40",price: 3.31),
-      PhotoPrintingFormat(1,format: "30x45",price: 3.31),
+      PhotoSize(1, "10x15", 0.22),
+      PhotoSize(1, "20x30", 1.11),
+      PhotoSize(1, "21x30", 1.11),
+      PhotoSize(1, "24x30", 1.11),
+      PhotoSize(1, "30x40", 3.31),
+      PhotoSize(1, "30x45", 3.31),
+    ];
+  }
+
+  List<PhotoPrinting> getListPhotoPrinting() {
+    return [
+      PhotoPrinting(1, "Tirage photo", sizes: [
+        PhotoSize(1, "10x15", 0.22),
+        PhotoSize(1, "20x30", 1.11),
+        PhotoSize(1, "21x30", 1.11),
+        PhotoSize(1, "24x30", 1.11),
+        PhotoSize(1, "30x40", 3.31),
+        PhotoSize(1, "30x45", 3.31),
+      ]),
+      PhotoPrinting(1, "Impression sur Aluminium", sizes: [
+        PhotoSize(1, "30x45", 50),
+        PhotoSize(1, "60x40", 75),
+        PhotoSize(1, "90x60", 130),
+      ]),
+      PhotoPrinting(1, "Toile", sizes: [
+        PhotoSize(1, "30x45", 60),
+        PhotoSize(1, "60x40", 70),
+        PhotoSize(1, "90x60", 105),
+        PhotoSize(1, "80x120", 140),
+      ]),
+      PhotoPrinting(1, "Acrylglas (Verre acrylique)", sizes: [
+        PhotoSize(1, "20x30", 55),
+        PhotoSize(1, "30x45", 75),
+        PhotoSize(1, "60x40", 105),
+        PhotoSize(1, "80x130", 130),
+      ]),
+      PhotoPrinting(1, "Photo encadrée", sizes: [
+        PhotoSize(1, "20x30", 55),
+        PhotoSize(1, "30x30", 65),
+        PhotoSize(1, "40x45", 75),
+        PhotoSize(1, "60x40", 95),
+      ])
     ];
   }
 }
