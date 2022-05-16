@@ -9,27 +9,31 @@ import 'package:time_co_shoots_price/view/information/widget/gender_information.
 
 class InformationPage extends StatelessWidget {
   static const routeName = '/information';
+  final bool statePermission;
   final formKey = GlobalKey<FormState>();
   final InformationService _informationService =
       GetIt.I.get<InformationService>();
 
-  InformationPage({Key? key}) : super(key: key);
+  InformationPage({this.statePermission = false, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: const Text("Information client", style: TextStyle(color: Colors.white)),
-        leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back,
-            color: Colors.white,
-          ),
-          onPressed: () => GoRouter.of(context).pop(),
-        ),
-      ),
+      appBar: statePermission
+          ? null
+          : AppBar(
+              backgroundColor: Colors.black,
+              title: const Text("Information client",
+                  style: TextStyle(color: Colors.white)),
+              leading: IconButton(
+                icon: const Icon(
+                  Icons.arrow_back,
+                  color: Colors.white,
+                ),
+                onPressed: () => GoRouter.of(context).pop(),
+              ),
+            ),
       body: Form(
         key: formKey,
         child: Container(
@@ -46,8 +50,21 @@ class InformationPage extends StatelessWidget {
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
-
-                      const GenderInformation(),
+                      if (statePermission) ...{
+                        Container(
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.black)),
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(
+                              "Autorisation de diffusion d'image",
+                              style: TextStyle(fontSize: 20),
+                            ),
+                          ),
+                        )
+                      } else ...{
+                        const GenderInformation()
+                      },
                       CustomFormField(
                         labelText: "Nom",
                         validator: (val) =>
@@ -88,7 +105,7 @@ class InformationPage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      CustomFormField(
+                      const CustomFormField(
                         labelText: "Complément d'adresse",
                       ),
                       Row(
@@ -115,16 +132,19 @@ class InformationPage extends StatelessWidget {
                 ),
               ),
               ElevatedButton(
-                  child: const Padding(
-                    padding: EdgeInsets.all(8.0),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Continuer",
-                      style: TextStyle(fontSize: 16),
+                      statePermission ? "Signer" : "Continuer",
+                      style: const TextStyle(fontSize: 16),
                     ),
                   ),
                   onPressed: () {
-                    if (formKey.currentState!.validate() &&
-                        _informationService.genderSelected) {}
+                    if (formKey.currentState!.validate()) {
+                      if (!statePermission &&
+                          _informationService.genderSelected) {
+                      } else {}
+                    }
                   })
             ],
           ),

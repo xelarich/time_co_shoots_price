@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:time_co_shoots_price/main.dart';
 import 'package:time_co_shoots_price/provider/bottom_bar_provider.dart';
 import 'package:time_co_shoots_price/shared/styles.dart';
+import 'package:time_co_shoots_price/view/information/infomation_page.dart';
 import 'package:time_co_shoots_price/view/wedding/wedding_page.dart';
 
 class Home extends StatelessWidget {
@@ -16,13 +17,15 @@ class Home extends StatelessWidget {
     TabItem(icon: Icons.map, title: 'Discovery'),
   ];
 
-  final _widgetOptions = const [
-    Text('page1'),
-    WeddingPage(),
-    Text('page3'),
+  final _widgetOptions = [
+    const Text('page1'),
+    const WeddingPage(),
+    InformationPage(
+      statePermission: true,
+    ),
   ];
 
-  const Home({Key? key}) : super(key: key);
+  Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => ChangeNotifierProvider.value(
