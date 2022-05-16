@@ -5,6 +5,7 @@ import 'package:time_co_shoots_price/shared/styles.dart';
 import 'package:time_co_shoots_price/view/home.dart';
 import 'package:time_co_shoots_price/view/information/infomation_page.dart';
 import 'package:time_co_shoots_price/view/option/option_page.dart';
+import 'package:time_co_shoots_price/view/resume/resume_page.dart';
 import 'package:time_co_shoots_price/view/splashscreen.dart';
 
 void main() {
@@ -29,7 +30,10 @@ class App extends StatelessWidget {
         builder: (context, state) => InformationPage()),
     GoRoute(
         path: OptionPage.routeName,
-        builder: (context, state) => const OptionPage())
+        builder: (context, state) => const OptionPage()),
+    GoRoute(
+        path: ResumePage.routeName,
+        builder: (context, state) => const ResumePage())
   ]);
 
   // This widget is the root of your application.

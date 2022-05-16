@@ -42,14 +42,18 @@ class WeddingProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  double getTotalWedding() {
-    double total = weddingSelected!.price!.toDouble();
-    for (var photo in photoPrintingList) {
-      for (var size in photo.sizes) {
-        total += size.price * size.quantities;
+  double? getTotalWedding() {
+    if (weddingSelected == null || weddingSelected!.price == null) {
+      return null;
+    } else {
+      double total = weddingSelected!.price!.toDouble();
+      for (var photo in photoPrintingList) {
+        for (var size in photo.sizes) {
+          total += size.price * size.quantities;
+        }
       }
+      return total;
     }
-    return total;
   }
 
   String getInitialValue(PhotoPrinting photoPrinting, PhotoSize photoSize) {

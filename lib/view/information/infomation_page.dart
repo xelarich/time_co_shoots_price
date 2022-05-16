@@ -88,7 +88,7 @@ class InformationPage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      CustomFormField(
+                      const CustomFormField(
                         labelText: "Complément d'adresse",
                       ),
                       Row(
@@ -124,7 +124,9 @@ class InformationPage extends StatelessWidget {
                   ),
                   onPressed: () {
                     if (formKey.currentState!.validate() &&
-                        _informationService.genderSelected) {}
+                        _informationService.genderSelected) {
+
+                    }
                   })
             ],
           ),

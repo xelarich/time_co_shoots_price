@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
-import 'package:time_co_shoots_price/main.dart';
+import 'package:time_co_shoots_price/provider/weeding_provider.dart';
 import 'package:time_co_shoots_price/shared/styles.dart';
 import 'package:time_co_shoots_price/shared/utils.dart';
-import 'package:time_co_shoots_price/view/information/infomation_page.dart';
 import 'package:time_co_shoots_price/view/option/printing_photo/printing_photo_page.dart';
-
-import '../../provider/weeding_provider.dart';
+import 'package:time_co_shoots_price/view/resume/resume_page.dart';
 
 class OptionPage extends StatefulWidget {
   static const routeName = '/option';
@@ -30,13 +28,14 @@ class _OptionPageState extends State<OptionPage> {
           backgroundColor: Colors.black,
           appBar: AppBar(
             backgroundColor: Colors.black,
-            title: const Text(App.title, style: TextStyle(color: Colors.white)),
+            title: const Text("Suppléments",
+                style: TextStyle(color: Colors.white)),
             leading: IconButton(
               icon: const Icon(
                 Icons.arrow_back,
                 color: Colors.white,
               ),
-              onPressed: () => GoRouter.of(context).pop(),
+              onPressed: () => context.pop(),
             ),
             bottom: const TabBar(
               labelColor: Styles.primaryColor,
@@ -70,11 +69,13 @@ class _OptionPageState extends State<OptionPage> {
                         Expanded(
                             flex: 1,
                             child: Text(
-                                'TOTAL ${removeTrailingZeros(weddingProvider.getTotalWedding())} €')),
+                                'TOTAL ${weddingProvider.getTotalWedding() == null ? "-" : removeTrailingZeros(weddingProvider.getTotalWedding()!)} €')),
                         Expanded(
                             child: ElevatedButton(
                                 onPressed: () {
-                                  context.push(InformationPage.routeName);
+                                  context.push(
+                                    ResumePage.routeName,
+                                  );
                                 },
                                 child: const Text("Suivant")))
                       ],

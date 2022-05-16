@@ -24,8 +24,7 @@ class _PrintingPhotoListState extends State<PrintingPhotoList> {
       child: Consumer<WeddingProvider>(
         builder: (context, weddingProvider, _) {
           return ExpansionPanelList(
-              animationDuration: const Duration(milliseconds: 1000),
-              dividerColor: Colors.red,
+              animationDuration: const Duration(milliseconds: 500),
               elevation: 1,
               children: [
                 ExpansionPanel(
