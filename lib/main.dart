@@ -23,7 +23,7 @@ class App extends StatelessWidget {
     GoRoute(
         path: Splashscreen.routeName,
         builder: (context, state) => const Splashscreen()),
-    GoRoute(path: Home.routeName, builder: (context, state) => const Home()),
+    GoRoute(path: Home.routeName, builder: (context, state) => Home()),
     GoRoute(
         path: InformationPage.routeName,
         builder: (context, state) => InformationPage()),
