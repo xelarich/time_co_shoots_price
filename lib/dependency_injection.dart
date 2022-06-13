@@ -1,5 +1,5 @@
 import 'package:get_it/get_it.dart';
-import 'package:time_co_shoots_price/provider/bottom_bar_provider.dart';
+import 'package:time_co_shoots_price/provider/navigation_provider.dart';
 import 'package:time_co_shoots_price/provider/weeding_provider.dart';
 import 'package:time_co_shoots_price/service/infomartion_service.dart';
 import 'package:time_co_shoots_price/service/price_service.dart';
@@ -15,7 +15,7 @@ ServiceDeclaration declareDependencyInjection = () {
 };
 
 void declareProvider() {
-  GetIt.I.registerSingleton(BottomBarProvider());
+  GetIt.I.registerSingleton(NavigationProvider());
   GetIt.I.registerSingleton(WeddingProvider());
 }
 
