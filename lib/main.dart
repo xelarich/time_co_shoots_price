@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:time_co_shoots_price/dependency_injection.dart';
 import 'package:time_co_shoots_price/shared/styles.dart';
-import 'package:time_co_shoots_price/view/home.dart';
+import 'package:time_co_shoots_price/view/home/home.dart';
 import 'package:time_co_shoots_price/view/information/infomation_page.dart';
 import 'package:time_co_shoots_price/view/option/option_page.dart';
 import 'package:time_co_shoots_price/view/splashscreen.dart';

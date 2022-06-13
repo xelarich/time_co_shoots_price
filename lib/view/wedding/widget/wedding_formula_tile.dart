@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:time_co_shoots_price/data/local_model/wedding_formula.dart';
 import 'package:time_co_shoots_price/shared/styles.dart';
@@ -55,9 +56,10 @@ class _WeddingFormulaTileState extends State<WeddingFormulaTile> {
                 padding: const EdgeInsets.symmetric(vertical: 8),
                 child: Row(
                   children: [
-                    ImageIcon(
-                      AssetImage(event.pathIcon!),
-                      size: 32,
+                    SvgPicture.asset(
+                     event.pathIcon!,
+                      width: 32,
+                      height: 32,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 8),
