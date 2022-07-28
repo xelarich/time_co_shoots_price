@@ -9,9 +9,10 @@ class PhotoPrinting {
   List<PhotoSize> sizes;
   bool isExpanded;
 
-  PhotoPrinting(this.id, this.name, {this.sizes =  const [],this.isExpanded = false});
+  PhotoPrinting(this.id, this.name,
+      {this.sizes = const [], this.isExpanded = false});
 
-  PhotoPrinting clone() => PhotoPrinting(id, name,sizes: []);
+  PhotoPrinting clone() => PhotoPrinting(id, name, sizes: []);
 
   factory PhotoPrinting.fromJson(Map<String, dynamic> json) =>
       _$PhotoPrintingFromJson(json);

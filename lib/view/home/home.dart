@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:time_co_shoots_price/main.dart';
 import 'package:time_co_shoots_price/provider/navigation_provider.dart';
 import 'package:time_co_shoots_price/view/home/widget/navigation_drawer.dart';
-import 'package:time_co_shoots_price/view/information/infomation_page.dart';
+import 'package:time_co_shoots_price/view/signature_page.dart';
 import 'package:time_co_shoots_price/view/visit/visit_page.dart';
 import 'package:time_co_shoots_price/view/wedding/wedding_page.dart';
 
@@ -23,9 +23,7 @@ class Home extends StatelessWidget {
     const WeddingPage(),
     const Center(child: Text('Studio page')),
     const VisitPage(),
-    InformationPage(
-      statePermission: true,
-    ),
+    SignaturePage()
   ];
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
