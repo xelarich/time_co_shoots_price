@@ -57,7 +57,7 @@ class _WeddingFormulaTileState extends State<WeddingFormulaTile> {
                 child: Row(
                   children: [
                     SvgPicture.asset(
-                     event.pathIcon!,
+                      event.pathIcon!,
                       width: 32,
                       height: 32,
                     ),

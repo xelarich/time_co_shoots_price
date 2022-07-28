@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-import 'package:go_router/go_router.dart';
 import 'package:time_co_shoots_price/service/infomartion_service.dart';
-import 'package:time_co_shoots_price/shared/extension.dart';
-import 'package:time_co_shoots_price/shared/styles.dart';
-import 'package:time_co_shoots_price/view/information/widget/custom_formfield.dart';
-import 'package:time_co_shoots_price/view/information/widget/gender_information.dart';
 
 class InformationPage extends StatelessWidget {
   static const routeName = '/information';
@@ -18,7 +13,8 @@ class InformationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Column();
+    /*return Scaffold(
       backgroundColor: Colors.black,
       appBar: statePermission
           ? null
@@ -150,6 +146,6 @@ class InformationPage extends StatelessWidget {
           ),
         ),
       ),
-    );
+    );*/
   }
 }

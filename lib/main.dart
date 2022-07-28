@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:time_co_shoots_price/data/local_model/authorization.dart';
 import 'package:time_co_shoots_price/dependency_injection.dart';
 import 'package:time_co_shoots_price/shared/styles.dart';
 import 'package:time_co_shoots_price/view/home/home.dart';
 import 'package:time_co_shoots_price/view/information/infomation_page.dart';
 import 'package:time_co_shoots_price/view/option/option_page.dart';
+import 'package:time_co_shoots_price/view/pdf_page.dart';
 import 'package:time_co_shoots_price/view/splashscreen.dart';
 
 void main() {
@@ -23,13 +25,21 @@ class App extends StatelessWidget {
     GoRoute(
         path: Splashscreen.routeName,
         builder: (context, state) => const Splashscreen()),
-    GoRoute(path: Home.routeName, builder: (context, state) => Home()),
+    GoRoute(
+      path: Home.routeName,
+      builder: (context, state) => Home(),
+    ),
     GoRoute(
         path: InformationPage.routeName,
         builder: (context, state) => InformationPage()),
     GoRoute(
         path: OptionPage.routeName,
-        builder: (context, state) => const OptionPage())
+        builder: (context, state) => const OptionPage()),
+    GoRoute(
+      path: PdfPage.routeName,
+      builder: (context, state) =>
+          PdfPage(authorization: state.extra! as Authorization),
+    ),
   ]);
 
   // This widget is the root of your application.
@@ -40,6 +50,7 @@ class App extends StatelessWidget {
           primaryColor: Styles.primaryColor,
           primarySwatch: Styles.primaryColor,
         ),
+        routeInformationProvider: _goRouter.routeInformationProvider,
         routeInformationParser: _goRouter.routeInformationParser,
         routerDelegate: _goRouter.routerDelegate,
       );
