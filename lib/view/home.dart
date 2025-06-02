@@ -22,7 +22,7 @@ class Home extends StatelessWidget {
     Text('page3'),
   ];
 
-  const Home({Key? key}) : super(key: key);
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) => ChangeNotifierProvider.value(

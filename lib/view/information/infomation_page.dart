@@ -13,7 +13,7 @@ class InformationPage extends StatelessWidget {
   final InformationService _informationService =
       GetIt.I.get<InformationService>();
 
-  InformationPage({Key? key}) : super(key: key);
+  InformationPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,8 @@ class InformationPage extends StatelessWidget {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: const Text("Information client", style: TextStyle(color: Colors.white)),
+        title: const Text("Information client",
+            style: TextStyle(color: Colors.white)),
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,
@@ -46,7 +47,6 @@ class InformationPage extends StatelessWidget {
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
-
                       const GenderInformation(),
                       CustomFormField(
                         labelText: "Nom",

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../shared/styles.dart';
 
 class GenderInformation extends StatefulWidget {
-  const GenderInformation({Key? key}) : super(key: key);
+  const GenderInformation({super.key});
 
   @override
   State<GenderInformation> createState() => _GenderInformationState();

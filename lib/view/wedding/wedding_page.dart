@@ -8,7 +8,7 @@ import 'package:time_co_shoots_price/view/option/option_page.dart';
 import 'package:time_co_shoots_price/view/wedding/widget/wedding_formula_tile.dart';
 
 class WeddingPage extends StatefulWidget {
-  const WeddingPage({Key? key}) : super(key: key);
+  const WeddingPage({super.key});
 
   @override
   State<WeddingPage> createState() => _WeddingPageState();

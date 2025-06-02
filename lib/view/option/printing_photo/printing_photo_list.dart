@@ -8,7 +8,7 @@ import 'package:time_co_shoots_price/view/option/printing_photo/printing_photo_t
 class PrintingPhotoList extends StatefulWidget {
   final PhotoPrinting photoPrinting;
 
-  const PrintingPhotoList(this.photoPrinting, {Key? key}) : super(key: key);
+  const PrintingPhotoList(this.photoPrinting, {super.key});
 
   @override
   State<PrintingPhotoList> createState() => _PrintingPhotoListState();
