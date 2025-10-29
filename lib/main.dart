@@ -14,15 +14,12 @@ void main() {
 }
 
 class App extends StatelessWidget {
-  App({Key? key}) : super(key: key);
+  App({super.key});
 
   static const String title = 'TimeCo Shoots Price';
 
-  final GoRouter _goRouter = GoRouter(initialLocation: '/', routes: [
-    GoRoute(path: '/', redirect: (_) => Splashscreen.routeName),
-    GoRoute(
-        path: Splashscreen.routeName,
-        builder: (context, state) => const Splashscreen()),
+  final GoRouter _goRouter = GoRouter(initialLocation: Home.routeName, routes: [
+    GoRoute(path: Home.routeName, builder: (context, state) => const Home()),
     GoRoute(path: Home.routeName, builder: (context, state) => const Home()),
     GoRoute(
         path: InformationPage.routeName,
@@ -40,7 +37,6 @@ class App extends StatelessWidget {
           primaryColor: Styles.primaryColor,
           primarySwatch: Styles.primaryColor,
         ),
-        routeInformationParser: _goRouter.routeInformationParser,
-        routerDelegate: _goRouter.routerDelegate,
+        routerConfig: _goRouter,
       );
 }

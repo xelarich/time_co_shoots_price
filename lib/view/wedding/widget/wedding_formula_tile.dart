@@ -9,8 +9,7 @@ class WeddingFormulaTile extends StatefulWidget {
   final Function onTap;
 
   const WeddingFormulaTile(this.weddingType,
-      {required this.selected, required this.onTap, Key? key})
-      : super(key: key);
+      {required this.selected, required this.onTap, super.key});
 
   @override
   State<WeddingFormulaTile> createState() => _WeddingFormulaTileState();

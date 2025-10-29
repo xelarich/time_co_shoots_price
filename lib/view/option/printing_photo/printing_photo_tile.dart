@@ -13,8 +13,7 @@ class PrintingPhotoTile extends StatelessWidget {
   const PrintingPhotoTile({required this.photoPrintingFormat,
     required this.onFieldSubmitted,
     this.initialValue,
-    Key? key})
-      : super(key: key);
+    super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -67,8 +66,7 @@ class _ChangeQuantityTextField extends StatefulWidget {
   final Function(int) onFieldSubmitted;
   final String? initialValue;
 
-  const _ChangeQuantityTextField({Key? key, required this.onFieldSubmitted,this.initialValue})
-      : super(key: key);
+  const _ChangeQuantityTextField({super.key, required this.onFieldSubmitted,this.initialValue});
 
   @override
   _ChangeQuantityTextFieldState createState() =>

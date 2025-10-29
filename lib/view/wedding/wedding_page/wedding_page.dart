@@ -4,11 +4,11 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:time_co_shoots_price/provider/weeding_provider.dart';
 import 'package:time_co_shoots_price/service/price_service.dart';
-import 'package:time_co_shoots_price/view/wedding/wedding_option/wedding_option.dart';
-import 'package:time_co_shoots_price/view/wedding/wedding_page/widget/wedding_formula_tile.dart';
+import 'package:time_co_shoots_price/view/option/option_page.dart';
+import 'package:time_co_shoots_price/view/wedding/widget/wedding_formula_tile.dart';
 
 class WeddingPage extends StatefulWidget {
-  const WeddingPage({Key? key}) : super(key: key);
+  const WeddingPage({super.key});
 
   @override
   State<WeddingPage> createState() => _WeddingPageState();
@@ -17,7 +17,7 @@ class WeddingPage extends StatefulWidget {
 class _WeddingPageState extends State<WeddingPage> {
   @override
   Widget build(BuildContext context) {
-    final PriceService _priceService = GetIt.I.get<PriceService>();
+    final PriceService priceService = GetIt.I.get<PriceService>();
     final WeddingProvider weddingProvider = WeddingProvider();
     return Scaffold(
         backgroundColor: Colors.black,
@@ -32,10 +32,9 @@ class _WeddingPageState extends State<WeddingPage> {
                     padding: const EdgeInsets.all(8),
                     child: ElevatedButton(
                       style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.resolveWith<Color>(
-                          (Set<MaterialState> states) {
-                            if (states.contains(MaterialState.disabled)) {
+                        backgroundColor: WidgetStateProperty.resolveWith<Color>(
+                          (Set<WidgetState> states) {
+                            if (states.contains(WidgetState.disabled)) {
                               return Colors.grey;
                             }
                             return Theme.of(context)
@@ -43,6 +42,11 @@ class _WeddingPageState extends State<WeddingPage> {
                           },
                         ),
                       ),
+                      onPressed: weddingProvider.selectedIndex.isNegative
+                          ? null
+                          : () {
+                              context.push(OptionPage.routeName);
+                            },
                       child: const Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Text(
@@ -50,26 +54,21 @@ class _WeddingPageState extends State<WeddingPage> {
                           style: TextStyle(fontSize: 16),
                         ),
                       ),
-                      onPressed: weddingProvider.selectedIndex.isNegative
-                          ? null
-                          : () {
-                              context.push(WeddingOption.routeName);
-                            },
                     ),
                   ),
                   Expanded(
                     child: ListView.builder(
                       physics: const AlwaysScrollableScrollPhysics(),
-                      itemCount: _priceService.getListWeedingType().length,
+                      itemCount: priceService.getListWeedingType().length,
                       itemBuilder: (context, index) {
                         return Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: WeddingFormulaTile(
-                              _priceService.getListWeedingType()[index],
+                              priceService.getListWeedingType()[index],
                               selected: weddingProvider.selectedIndex == index,
                               onTap: () {
                                 weddingProvider.selectWeddingFormula(
-                                    _priceService.getListWeedingType()[index],
+                                    priceService.getListWeedingType()[index],
                                     index);
                               },
                             ));

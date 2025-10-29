@@ -4,7 +4,7 @@ import 'package:time_co_shoots_price/service/price_service.dart';
 import 'package:time_co_shoots_price/view/option/printing_photo/printing_photo_list.dart';
 
 class PrintingPhotoPage extends StatefulWidget {
-  const PrintingPhotoPage({Key? key}) : super(key: key);
+  const PrintingPhotoPage({super.key});
 
   @override
   State<PrintingPhotoPage> createState() => _PrintingPhotoPageState();

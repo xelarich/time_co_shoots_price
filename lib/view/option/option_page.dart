@@ -13,7 +13,7 @@ import '../../provider/weeding_provider.dart';
 class OptionPage extends StatefulWidget {
   static const routeName = '/option';
 
-  const OptionPage({Key? key}) : super(key: key);
+  const OptionPage({super.key});
 
   @override
   State<OptionPage> createState() => _OptionPageState();
