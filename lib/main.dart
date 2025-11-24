@@ -19,7 +19,7 @@ class App extends StatelessWidget {
   static const String title = 'TimeCo Shoots Price';
 
   final GoRouter _goRouter = GoRouter(initialLocation: '/', routes: [
-    GoRoute(path: '/', redirect: (_) => Splashscreen.routeName),
+    GoRoute(path: '/', redirect: (_, state) => Home.routeName),
     GoRoute(
         path: Splashscreen.routeName,
         builder: (context, state) => const Splashscreen()),
