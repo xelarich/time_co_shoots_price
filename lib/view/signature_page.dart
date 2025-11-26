@@ -92,7 +92,7 @@ class _SignaturePageState extends State<SignaturePage> {
                                   }),
                             ),
                             Visibility(
-                              visible: !signatureProvider.secondaryClient ,
+                              visible: !signatureProvider.secondaryClient,
                               child: IconButton(
                                   onPressed: () {
                                     signatureProvider.updateSecondaryClient();
@@ -227,7 +227,7 @@ class _SignaturePageState extends State<SignaturePage> {
                               icon: const Icon(Icons.add_circle_outline),
                               label: const Text("Ajouter un enfant"),
                               style: ElevatedButton.styleFrom(
-                                  onPrimary: Colors.white),
+                                  backgroundColor: Colors.white),
                             ),
                           ),
                         )
@@ -245,7 +245,7 @@ class _SignaturePageState extends State<SignaturePage> {
         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
         child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-                onPrimary: Colors.white,
+                backgroundColor: Colors.white,
                 textStyle: const TextStyle(color: Colors.white)),
             onPressed: () {
               if (formKey.currentState!.validate()) {
@@ -318,7 +318,7 @@ class _SignaturePageState extends State<SignaturePage> {
                     Expanded(
                       child: ElevatedButton.icon(
                           style: ElevatedButton.styleFrom(
-                              onPrimary: Colors.white,
+                              backgroundColor: Colors.white,
                               textStyle: const TextStyle(color: Colors.white)),
                           icon: const Icon(
                             Icons.search_rounded,

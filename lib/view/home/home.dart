@@ -50,7 +50,7 @@ class Home extends StatelessWidget {
               onPressed: () => scaffoldKey.currentState?.openDrawer(),
             ),
           ),
-          drawer: NavigationDrawer(_navigationOptions, _navigationPage),
+          drawer: MyNavigation(_navigationOptions, _navigationPage),
           body: _navigationPage.elementAt(provider.selectedIndex),
         ),
       ));

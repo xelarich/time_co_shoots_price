@@ -4,11 +4,11 @@ import 'package:provider/provider.dart';
 import 'package:time_co_shoots_price/provider/navigation_provider.dart';
 import 'package:time_co_shoots_price/shared/styles.dart';
 
-class NavigationDrawer extends StatelessWidget {
-  List<TabItem<IconData>> navigationOptions;
-  List<Widget> navigationPage;
+class MyNavigation extends StatelessWidget {
+  final List<TabItem<IconData>> navigationOptions;
+  final List<Widget> navigationPage;
 
-  NavigationDrawer(this.navigationOptions, this.navigationPage, {Key? key})
+  MyNavigation(this.navigationOptions, this.navigationPage, {Key? key})
       : super(key: key);
 
   @override
