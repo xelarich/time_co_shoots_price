@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 
-class BottomBarProvider extends ChangeNotifier {
-  int selectedIndex = 1;
+class NavigationProvider extends ChangeNotifier {
+  int selectedIndex = 3;
 
   void onItemTapped(int index) {
     selectedIndex = index;

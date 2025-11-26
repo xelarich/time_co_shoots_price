@@ -10,10 +10,11 @@ class PrintingPhotoTile extends StatelessWidget {
   final Function(int) onFieldSubmitted;
   final String? initialValue;
 
-  const PrintingPhotoTile({required this.photoPrintingFormat,
-    required this.onFieldSubmitted,
-    this.initialValue,
-    Key? key})
+  const PrintingPhotoTile(
+      {required this.photoPrintingFormat,
+      required this.onFieldSubmitted,
+      this.initialValue,
+      Key? key})
       : super(key: key);
 
   @override
@@ -41,8 +42,7 @@ class PrintingPhotoTile extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'Prix unitaire : ${removeTrailingZeros(
-                      photoPrintingFormat.price)} €',
+                  'Prix unitaire : ${removeTrailingZeros(photoPrintingFormat.price)} €',
                   style: const TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
@@ -55,7 +55,9 @@ class PrintingPhotoTile extends StatelessWidget {
             width: 60,
             height: 40,
             child: _ChangeQuantityTextField(
-                onFieldSubmitted: (int value) => onFieldSubmitted(value),initialValue: initialValue,),
+              onFieldSubmitted: (int value) => onFieldSubmitted(value),
+              initialValue: initialValue,
+            ),
           ),
         ],
       ),
@@ -67,7 +69,8 @@ class _ChangeQuantityTextField extends StatefulWidget {
   final Function(int) onFieldSubmitted;
   final String? initialValue;
 
-  const _ChangeQuantityTextField({Key? key, required this.onFieldSubmitted,this.initialValue})
+  const _ChangeQuantityTextField(
+      {Key? key, required this.onFieldSubmitted, this.initialValue})
       : super(key: key);
 
   @override

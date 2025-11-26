@@ -14,6 +14,7 @@ PhotoPrinting _$PhotoPrintingFromJson(Map<String, dynamic> json) =>
               ?.map((e) => PhotoSize.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
+      isExpanded: json['isExpanded'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$PhotoPrintingToJson(PhotoPrinting instance) =>
@@ -21,6 +22,7 @@ Map<String, dynamic> _$PhotoPrintingToJson(PhotoPrinting instance) =>
       'id': instance.id,
       'name': instance.name,
       'sizes': instance.sizes,
+      'isExpanded': instance.isExpanded,
     };
 
 PhotoSize _$PhotoSizeFromJson(Map<String, dynamic> json) => PhotoSize(

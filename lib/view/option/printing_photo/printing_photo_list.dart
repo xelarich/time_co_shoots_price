@@ -37,9 +37,11 @@ class _PrintingPhotoListState extends State<PrintingPhotoList> {
                           PrintingPhotoTile(
                             photoPrintingFormat: format,
                             onFieldSubmitted: (int value) {
-                              weddingProvider.updateWeddingPhoto(widget.photoPrinting, format, value);
+                              weddingProvider.updateWeddingPhoto(
+                                  widget.photoPrinting, format, value);
                             },
-                            initialValue: weddingProvider.getInitialValue(widget.photoPrinting, format),
+                            initialValue: weddingProvider.getInitialValue(
+                                widget.photoPrinting, format),
                           )
                         }
                       ],
