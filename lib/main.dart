@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:time_co_shoots_price/data/local_model/authorization.dart';
-import 'package:time_co_shoots_price/dependency_injection.dart';
 import 'package:time_co_shoots_price/shared/styles.dart';
 import 'package:time_co_shoots_price/view/home/home.dart';
 import 'package:time_co_shoots_price/view/information/infomation_page.dart';
@@ -10,9 +10,9 @@ import 'package:time_co_shoots_price/view/pdf_page.dart';
 import 'package:time_co_shoots_price/view/splashscreen.dart';
 
 void main() {
-  declareDependencyInjection();
 
-  runApp(App());
+
+  runApp(ProviderScope(child: App()));
 }
 
 class App extends StatelessWidget {

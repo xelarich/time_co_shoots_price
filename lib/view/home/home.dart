@@ -23,7 +23,7 @@ class Home extends StatelessWidget {
     const WeddingPage(),
     const Center(child: Text('Studio page')),
     const VisitPage(),
-    SignaturePage()
+    SignaturePage(),
   ];
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -31,27 +31,17 @@ class Home extends StatelessWidget {
   Home({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => ChangeNotifierProvider.value(
-      value: GetIt.I.get<NavigationProvider>(),
-      child: Consumer<NavigationProvider>(
-        builder: (context, provider, _) => Scaffold(
-          key: scaffoldKey,
-          appBar: AppBar(
-            backgroundColor: Colors.black,
-            title: const Text(
-              App.title,
-              style: TextStyle(color: Colors.white),
-            ),
-            leading: IconButton(
-              icon: const Icon(
-                Icons.menu_rounded,
-                color: Colors.white,
-              ),
-              onPressed: () => scaffoldKey.currentState?.openDrawer(),
-            ),
-          ),
-          drawer: MyNavigation(_navigationOptions, _navigationPage),
-          body: _navigationPage.elementAt(provider.selectedIndex),
-        ),
-      ));
+  Widget build(BuildContext context) => Scaffold(
+    key: scaffoldKey,
+    appBar: AppBar(
+      backgroundColor: Colors.black,
+      title: const Text(App.title, style: TextStyle(color: Colors.white)),
+      leading: IconButton(
+        icon: const Icon(Icons.menu_rounded, color: Colors.white),
+        onPressed: () => scaffoldKey.currentState?.openDrawer(),
+      ),
+    ),
+    drawer: MyNavigation(_navigationOptions, _navigationPage),
+    body: _navigationPage.elementAt(provider.selectedIndex),
+  );
 }
